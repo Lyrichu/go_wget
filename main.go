@@ -81,7 +81,6 @@ func downloadFile(urlLink, filename, headers string, verbose bool) error {
 	if err != nil {
 		return err
 	}
-	fmt.Printf("支持分块下载:%v\n", supportRange)
 
 	if !supportRange {
 		return sequentialDownload(client, parsedURL, filename, headers, verbose)
